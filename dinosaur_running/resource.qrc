@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/new">
+        <file>c++ project_backgruond.png</file>
+        <file>dinosaur.png</file>
+        <file>dinosaur_dead.png</file>
+        <file>dinosaur_down_right.png</file>
+        <file>dinosaur_left.png</file>
+        <file>dinosaur_right.png</file>
+        <file>icon_1.png</file>
+        <file>obstacle.png</file>
+        <file>dinosaur_down_left .png</file>
+    </qresource>
+</RCC>
