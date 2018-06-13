@@ -3,8 +3,8 @@
 //恐龙的长宽
 #define Play_W 90
 #define Play_H 90
-#define Play_Down_W 90
-#define Play_Down_H 90
+#define Play_Down_W 60
+#define Play_Down_H 45
 //屏幕尺寸
 #define SCENEWIDTH 1250
 #define SCENEHEIGHT 500
@@ -21,10 +21,10 @@
 #define D_Pos_Y 360.0
 //速度
 #define m_speed 5
-#define Dino_Speed 8
+#define Dino_Speed 5
 //动画控制
-#define Dur_Time 600
-#define Up_Distance 200
+#define Dur_Time 300
+#define Up_Distance 180
 
 #endif // GLOBAL
 
