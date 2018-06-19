@@ -31,6 +31,8 @@
 //计数器位置
 #define S_Pos_X 1100
 #define S_Pos_Y 50
+//计数器间隔
+#define Interval 20
 //速度
 #define m_speed 5
 #define Dino_Speed 5
