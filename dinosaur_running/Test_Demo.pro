@@ -16,14 +16,16 @@ SOURCES += main.cpp \
     obstacle.cpp \
     space.cpp \
     dinosaur.cpp \
-    Randomizer.cpp
+    Randomizer.cpp \
+    show_score.cpp
 
 HEADERS  += \
     obstacle.h \
     space.h \
     dinosaur.h \
     Randomizer.h \
-    global.h
+    global.h \
+    show_score.h
 
 FORMS    += gamewidget.ui
 

@@ -49,6 +49,9 @@ void Space::init()
     QPixmap t;
     t=QPixmap(Dino_Pic);
     m_player = new dinosaur(D_Pos_X,D_Pos_Y,t,m_scene);
+    t=QPixmap(Obs_Pic);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    s_num = new Show_score(S_Pos_X,S_Pos_Y,&m_scores,m_scene);
     m_player->setFocus();
     connect(m_player,SIGNAL(dead()),this,SLOT(slt_playerDead()));
     m_timer->start(50);
@@ -67,6 +70,7 @@ void Space::slt_playerDead()
 {
     m_timer->stop();
     isRunning = false;
+    m_obstacle1->anim_move->stop();
     //slt_newGame();
 }
 
@@ -74,14 +78,16 @@ void Space::slt_updata()
 {
     m_scene->advance();
     m_step++;
-    if (m_step % 50 == 0 )
+    if (m_step % 20 == 0 )
     {
 
          m_scores++;
+
     }
 
     if (m_step % 500 == 0)
     {
         m_step = 0;
+        delete m_obstacle1;
     }
 }

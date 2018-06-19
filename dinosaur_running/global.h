@@ -5,6 +5,9 @@
 #define Play_H 90
 #define Play_Down_W 60
 #define Play_Down_H 45
+//障碍物长宽
+#define Obs_W 60
+#define Obs_H 90
 //屏幕尺寸
 #define SCENEWIDTH 1250
 #define SCENEHEIGHT 500
@@ -16,15 +19,28 @@
 #define Dino_Pic_Down_Left ":/new/dinosaur_down_left .png"
 #define Dino_Pic_Down_Right ":/new/dinosaur_down_right.png"
 #define Dino_Pic_Dead ":/new/dinosaur_dead.png"
+#define Obs_Pic ":/new/obstacle.png"
+//数字图片
+#define Num_1_Pic ":/new/obstacle.png"
 //恐龙初始位置
 #define D_Pos_X 150.0
 #define D_Pos_Y 360.0
+//障碍物初始位置
+#define O_Pos_X 1000.0
+#define O_Pos_Y 360.0
+//计数器位置
+#define S_Pos_X 1100
+#define S_Pos_Y 50
 //速度
 #define m_speed 5
 #define Dino_Speed 5
 //动画控制
 #define Dur_Time 300
+#define Dur_Time_obs 1000
 #define Up_Distance 180
+//数字大小
+#define Num_W 20
+#define Num_H 20
 
 #endif // GLOBAL
 
