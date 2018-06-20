@@ -7,6 +7,7 @@
 dinosaur::dinosaur(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGraphicsItem *parent)
     :QGraphicsObject(parent),m_pixpos(0),m_step(0),state_flag(1)
 {
+     run=1;
      m_pixs=pixs.scaled(Play_W,Play_H,Qt::KeepAspectRatioByExpanding);
      dino_jump=m_pixs;
      scene->addItem(this);
@@ -21,6 +22,8 @@ dinosaur::dinosaur(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGr
      dino_left_down=temp.scaled(Play_Down_W,Play_Down_H,Qt::KeepAspectRatioByExpanding);
      temp=QPixmap(Dino_Pic_Down_Right);
      dino_right_down=temp.scaled(Play_Down_W,Play_Down_H,Qt::KeepAspectRatioByExpanding);
+     temp=QPixmap(Dino_Pic_Dead);
+     dino_dead=temp.scaled(Play_Down_W,Play_Down_H,Qt::KeepAspectRatioByExpanding);
 
 
      Group = new QSequentialAnimationGroup;
@@ -89,6 +92,10 @@ void dinosaur::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 void dinosaur::fall()
 {
     emit dead();
+    run=0;
+    Group->stop();
+    m_pixs=dino_dead;
+    update();
     qDebug()<<"Daed Event!";
 }
 
@@ -138,7 +145,10 @@ void dinosaur::keyPressEvent(QKeyEvent *event)
         case Qt::Key_Up:
             event->accept();
             emit upkey();
-            Group->start();
+            if(run==1)
+            {
+              Group->start();
+            }
            // qDebug()<<"UP";
             break;
         case Qt::Key_Down:
@@ -173,10 +183,14 @@ void dinosaur::slt_s1_in()
 }
 void dinosaur::slt_s2_in()
 {
+    if(run==1)
+    {
     state_flag = 2;
     m_pixs=dino_jump;
     Group->start();
-    //qDebug()<<"slt_2!!";
+    //qDebug()<<run;
+    }
+
 }
 void dinosaur::slt_s3_in()
 {

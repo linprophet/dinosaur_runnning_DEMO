@@ -79,7 +79,7 @@ void Space::slt_updata()
 {
     m_scene->advance();
     m_step++;
-    if (m_step % 20 == 0 )
+    if (m_step % 2 == 0 )
     {
 
          m_scores++;
@@ -89,6 +89,6 @@ void Space::slt_updata()
     if (m_step % 500 == 0)
     {
         m_step = 0;
-        delete m_obstacle1;
+        //delete m_obstacle1;
     }
 }

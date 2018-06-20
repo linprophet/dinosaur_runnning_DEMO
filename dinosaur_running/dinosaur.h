@@ -32,7 +32,7 @@ public:
     //virtual int name() const = 0;
     int state_flag;
     QSequentialAnimationGroup *Group;
-    QPixmap m_pixs,dino_left,dino_right,dino_left_down,dino_right_down,dino_jump;
+    QPixmap m_pixs,dino_left,dino_right,dino_left_down,dino_right_down,dino_jump,dino_dead;
 protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
@@ -44,6 +44,7 @@ protected:
     int m_step;
     qreal w;
     qreal h;
+    int run;
 
 signals:
     void    dead();

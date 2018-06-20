@@ -1,10 +1,10 @@
 #ifndef GLOBAL
 #define GLOBAL
 //恐龙的长宽
-#define Play_W 90
-#define Play_H 90
-#define Play_Down_W 60
-#define Play_Down_H 45
+#define Play_W 120
+#define Play_H 120
+#define Play_Down_W 120
+#define Play_Down_H 120
 //障碍物长宽
 #define Obs_W 60
 #define Obs_H 90
@@ -16,12 +16,13 @@
 #define Dino_Pic  ":/new/dinosaur.png"
 #define Dino_Pic_Left ":/new/dinosaur_left.png"
 #define Dino_Pic_Right ":/new/dinosaur_right.png"
-#define Dino_Pic_Down_Left ":/new/dinosaur_down_left .png"
+#define Dino_Pic_Down_Left ":/new/dinosaur_down_left.png"
 #define Dino_Pic_Down_Right ":/new/dinosaur_down_right.png"
 #define Dino_Pic_Dead ":/new/dinosaur_dead.png"
+#define Dino_Pic_Null ":/new/dinosaur_null.png"
 #define Obs_Pic ":/new/obstacle.png"
 //数字图片
-#define Num_1_Pic ":/new/obstacle.png"
+#define Num_1_Pic ":/new/num_0.png"
 //恐龙初始位置
 #define D_Pos_X 150.0
 #define D_Pos_Y 360.0
@@ -42,6 +43,7 @@
 #define Num_W 20
 #define Num_H 20
 //数字间隔
-#define Interval 20
+#define Interval 25
+
 #endif // GLOBAL
 

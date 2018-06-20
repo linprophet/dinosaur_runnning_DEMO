@@ -21,7 +21,8 @@ protected:
     void advance(int step) ;
 private:
     int* s_score;
-    QPixmap s_num_pic;
+    QPixmap s_num_pic,s_num_pic_bit[5];
+    QPixmap num[10];
 };
 
 #endif // SHOW_SCORE
