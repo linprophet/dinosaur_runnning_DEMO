@@ -26,9 +26,9 @@ QRectF Show_score::boundingRect()const
 
 void Show_score::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-   painter->drawPixmap(0,0,Num_H,Num_W,s_num_1_pic);
-   painter->drawPixmap(Interval,0,Num_H,Num_W,s_num_2_pic);
-   painter->drawPixmap(Interval*2,0,Num_H,Num_W,s_num_3_pic);
+   painter->drawPixmap(0,0,Num_H,Num_W,s_num_pic);
+   painter->drawPixmap(Interval,0,Num_H,Num_W,s_num_pic);
+   painter->drawPixmap(Interval*2,0,Num_H,Num_W,s_num_pic);
 
 }
 

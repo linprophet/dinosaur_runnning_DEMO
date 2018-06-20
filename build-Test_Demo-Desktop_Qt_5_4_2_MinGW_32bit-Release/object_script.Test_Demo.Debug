@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\obstacle.o
+./debug\space.o
+./debug\dinosaur.o
+./debug\Randomizer.o
+./debug\show_score.o
+./debug\qrc_resource.o
+./debug\moc_space.o
+./debug\moc_dinosaur.o
+./debug\moc_Randomizer.o
+);

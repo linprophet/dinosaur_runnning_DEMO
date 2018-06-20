@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\obstacle.o
+./release\space.o
+./release\dinosaur.o
+./release\Randomizer.o
+./release\show_score.o
+./release\qrc_resource.o
+./release\moc_space.o
+./release\moc_dinosaur.o
+./release\moc_Randomizer.o
+);
