@@ -71,6 +71,7 @@ void Space::slt_playerDead()
     m_timer->stop();
     isRunning = false;
     m_obstacle1->anim_move->stop();
+    s_num->process();
     //slt_newGame();
 }
 
