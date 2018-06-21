@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_dinosaur_t {
     QByteArrayData data[10];
-    char stringdata[75];
+    char stringdata[76];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,14 +35,14 @@ QT_MOC_LITERAL(2, 14, 0), // ""
 QT_MOC_LITERAL(3, 15, 5), // "upkey"
 QT_MOC_LITERAL(4, 21, 7), // "downkey"
 QT_MOC_LITERAL(5, 29, 10), // "releasekey"
-QT_MOC_LITERAL(6, 40, 4), // "delt"
-QT_MOC_LITERAL(7, 45, 9), // "slt_s1_in"
-QT_MOC_LITERAL(8, 55, 9), // "slt_s2_in"
-QT_MOC_LITERAL(9, 65, 9) // "slt_s3_in"
+QT_MOC_LITERAL(6, 40, 5), // "renew"
+QT_MOC_LITERAL(7, 46, 9), // "slt_s1_in"
+QT_MOC_LITERAL(8, 56, 9), // "slt_s2_in"
+QT_MOC_LITERAL(9, 66, 9) // "slt_s3_in"
 
     },
     "dinosaur\0dead\0\0upkey\0downkey\0releasekey\0"
-    "delt\0slt_s1_in\0slt_s2_in\0slt_s3_in"
+    "renew\0slt_s1_in\0slt_s2_in\0slt_s3_in"
 };
 #undef QT_MOC_LITERAL
 
@@ -95,7 +95,7 @@ void dinosaur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 1: _t->upkey(); break;
         case 2: _t->downkey(); break;
         case 3: _t->releasekey(); break;
-        case 4: _t->delt(); break;
+        case 4: _t->renew(); break;
         case 5: _t->slt_s1_in(); break;
         case 6: _t->slt_s2_in(); break;
         case 7: _t->slt_s3_in(); break;
@@ -130,7 +130,7 @@ void dinosaur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         }
         {
             typedef void (dinosaur::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dinosaur::delt)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dinosaur::renew)) {
                 *result = 4;
             }
         }
@@ -199,7 +199,7 @@ void dinosaur::releasekey()
 }
 
 // SIGNAL 4
-void dinosaur::delt()
+void dinosaur::renew()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, Q_NULLPTR);
 }

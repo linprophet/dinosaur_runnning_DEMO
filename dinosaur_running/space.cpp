@@ -34,6 +34,7 @@ Space::Space(QWidget *parent) : QGraphicsView(parent), isRunning(false) {
 
     m_timer = new QTimer;
     connect(m_timer, SIGNAL(timeout()), this, SLOT(slt_updata()));
+    //
   /*  connect(m_obstacle1,SIGNAL(delt()),this,SLOT(slt_del()));*/
 
     init();
@@ -56,6 +57,7 @@ void Space::init()
     s_num = new Show_score(S_Pos_X,S_Pos_Y,&m_scores,m_scene);
     m_player->setFocus();
     connect(m_player,SIGNAL(dead()),this,SLOT(slt_playerDead()));
+    connect(m_player,SIGNAL(renew()),this,SLOT(slt_newGame()));
     m_timer->start(50);
 }
 
@@ -104,7 +106,7 @@ void Space::slt_updata()
 
     }
 
-    if (m_step % 500 == 0)
+    if (m_step % 100 == 0)
     {
         m_step = 0;
     }

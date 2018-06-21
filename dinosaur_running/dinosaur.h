@@ -50,7 +50,7 @@ signals:
     void    upkey();
     void    downkey();
     void    releasekey();
-    void     delt();
+    void     renew();
 protected slots:
     void slt_s1_in();
     void slt_s2_in();

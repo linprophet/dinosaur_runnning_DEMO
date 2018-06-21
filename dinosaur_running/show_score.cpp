@@ -90,7 +90,8 @@ void Show_score::advance(int step)
 
 QRectF Show_score::boundingRect()const
 {
- return s_num_pic.rect();
+  QRectF sqaue(0,0,500,50);
+ return sqaue;
 }
 
 void Show_score::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

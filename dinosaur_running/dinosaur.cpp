@@ -159,6 +159,11 @@ void dinosaur::keyPressEvent(QKeyEvent *event)
             emit downkey();
           //  qDebug()<<"Down";
             break;
+        case Qt::Key_R:
+            if(run==0)
+            {
+                  emit renew();
+            }
         }
 }
 
