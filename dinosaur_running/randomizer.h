@@ -8,8 +8,6 @@ class Randomizer : public QObject
 public:
     static int creat(int x);
     static int creat(int x, int y);
-private:
-    //必带参
     explicit Randomizer(QObject *parent = 0);
 };
 
