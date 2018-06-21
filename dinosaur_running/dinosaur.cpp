@@ -62,7 +62,7 @@ dinosaur::dinosaur(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGr
      connect(s2,SIGNAL(entered()),this,SLOT(slt_s2_in()));
      connect(s3,SIGNAL(entered()),this,SLOT(slt_s3_in()));
      Machine->start();
-     qDebug()<<"new Event!";
+     //qDebug()<<"new Event!";
 }
 
 dinosaur::~dinosaur()
@@ -112,7 +112,7 @@ void dinosaur::doCollide()
 
 void dinosaur::advance(int step)
 {
-    qDebug()<<run;
+    //qDebug()<<run;
     m_step++;
     doCollide();
     if(state_flag==1&&m_step%Dino_Speed==0)

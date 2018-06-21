@@ -22,7 +22,16 @@
 #define Dino_Pic_Null ":/new/dinosaur_null.png"
 #define Obs_Pic ":/new/obstacle.png"
 //数字图片
-#define Num_1_Pic ":/new/num_0.png"
+#define Num_0_Pic ":/new/num_0.png"
+#define Num_1_Pic ":/new/num_1.png"
+#define Num_2_Pic ":/new/num_2.png"
+#define Num_3_Pic ":/new/num_3.png"
+#define Num_4_Pic ":/new/num_4.png"
+#define Num_5_Pic ":/new/num_5.png"
+#define Num_6_Pic ":/new/num_6.png"
+#define Num_7_Pic ":/new/num_7.png"
+#define Num_8_Pic ":/new/num_8.png"
+#define Num_9_Pic ":/new/num_9.png"
 //恐龙初始位置
 #define D_Pos_X 150.0
 #define D_Pos_Y 360.0

@@ -11,5 +11,14 @@
         <file>dinosaur_down_right.png</file>
         <file>dinosaur_null.png</file>
         <file>num_0.png</file>
+        <file>num_1.png</file>
+        <file>num_2.png</file>
+        <file>num_3.png</file>
+        <file>num_4.png</file>
+        <file>num_5.png</file>
+        <file>num_6.png</file>
+        <file>num_7.png</file>
+        <file>num_8.png</file>
+        <file>num_9.png</file>
     </qresource>
 </RCC>

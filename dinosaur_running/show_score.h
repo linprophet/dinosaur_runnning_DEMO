@@ -7,6 +7,7 @@
 #include <QPixmap>
 #include <QPropertyAnimation>
 #include <QPainter>
+#include <QString>
 
 class Show_score:public QGraphicsObject
 
@@ -23,6 +24,9 @@ private:
     int* s_score;
     QPixmap s_num_pic,s_num_pic_bit[5];
     QPixmap num[10];
+    //QString int2string(int a);
+    int bit;
+    QString num_address;
 };
 
 #endif // SHOW_SCORE
