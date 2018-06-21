@@ -45,12 +45,12 @@ protected:
     qreal w;
     qreal h;
     int run;
-
 signals:
     void    dead();
     void    upkey();
     void    downkey();
     void    releasekey();
+    void     delt();
 protected slots:
     void slt_s1_in();
     void slt_s2_in();

@@ -23,7 +23,7 @@ Space::Space(QWidget *parent) : QGraphicsView(parent), isRunning(false) {
     setRenderHint(QPainter::Antialiasing);
 
     QPixmap pix(SCENEWIDTH, SCENEHEIGHT);
-    pix.load(background);
+    pix.load(back_ground);
     QPixmap temp = pix.scaled(SCENEWIDTH, SCENEHEIGHT, Qt::KeepAspectRatioByExpanding);
     setBackgroundBrush(temp);
 
@@ -34,7 +34,7 @@ Space::Space(QWidget *parent) : QGraphicsView(parent), isRunning(false) {
 
     m_timer = new QTimer;
     connect(m_timer, SIGNAL(timeout()), this, SLOT(slt_updata()));
-    //connect(this, SIGNAL(sig_menu()), this, SLOT(slt_menu()));
+  /*  connect(m_obstacle1,SIGNAL(delt()),this,SLOT(slt_del()));*/
 
     init();
 
@@ -91,4 +91,9 @@ void Space::slt_updata()
         m_step = 0;
         //delete m_obstacle1;
     }
+}
+
+void Space::slt_del()
+{
+    delete m_obstacle1;;
 }

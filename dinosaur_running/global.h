@@ -12,7 +12,7 @@
 #define SCENEWIDTH 1250
 #define SCENEHEIGHT 500
 //图片地址
-#define background ":/new/c++ project_backgruond.png"
+#define back_ground ":/new/c++ project_backgruond.png"
 #define Dino_Pic  ":/new/dinosaur.png"
 #define Dino_Pic_Left ":/new/dinosaur_left.png"
 #define Dino_Pic_Right ":/new/dinosaur_right.png"

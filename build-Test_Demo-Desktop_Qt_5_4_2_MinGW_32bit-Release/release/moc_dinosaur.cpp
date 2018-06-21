@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_dinosaur_t {
-    QByteArrayData data[9];
-    char stringdata[70];
+    QByteArrayData data[10];
+    char stringdata[75];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,13 +35,14 @@ QT_MOC_LITERAL(2, 14, 0), // ""
 QT_MOC_LITERAL(3, 15, 5), // "upkey"
 QT_MOC_LITERAL(4, 21, 7), // "downkey"
 QT_MOC_LITERAL(5, 29, 10), // "releasekey"
-QT_MOC_LITERAL(6, 40, 9), // "slt_s1_in"
-QT_MOC_LITERAL(7, 50, 9), // "slt_s2_in"
-QT_MOC_LITERAL(8, 60, 9) // "slt_s3_in"
+QT_MOC_LITERAL(6, 40, 4), // "delt"
+QT_MOC_LITERAL(7, 45, 9), // "slt_s1_in"
+QT_MOC_LITERAL(8, 55, 9), // "slt_s2_in"
+QT_MOC_LITERAL(9, 65, 9) // "slt_s3_in"
 
     },
     "dinosaur\0dead\0\0upkey\0downkey\0releasekey\0"
-    "slt_s1_in\0slt_s2_in\0slt_s3_in"
+    "delt\0slt_s1_in\0slt_s2_in\0slt_s3_in"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,25 +52,27 @@ static const uint qt_meta_data_dinosaur[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x06 /* Public */,
-       3,    0,   50,    2, 0x06 /* Public */,
-       4,    0,   51,    2, 0x06 /* Public */,
-       5,    0,   52,    2, 0x06 /* Public */,
+       1,    0,   54,    2, 0x06 /* Public */,
+       3,    0,   55,    2, 0x06 /* Public */,
+       4,    0,   56,    2, 0x06 /* Public */,
+       5,    0,   57,    2, 0x06 /* Public */,
+       6,    0,   58,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   53,    2, 0x09 /* Protected */,
-       7,    0,   54,    2, 0x09 /* Protected */,
-       8,    0,   55,    2, 0x09 /* Protected */,
+       7,    0,   59,    2, 0x09 /* Protected */,
+       8,    0,   60,    2, 0x09 /* Protected */,
+       9,    0,   61,    2, 0x09 /* Protected */,
 
  // signals: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -92,9 +95,10 @@ void dinosaur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 1: _t->upkey(); break;
         case 2: _t->downkey(); break;
         case 3: _t->releasekey(); break;
-        case 4: _t->slt_s1_in(); break;
-        case 5: _t->slt_s2_in(); break;
-        case 6: _t->slt_s3_in(); break;
+        case 4: _t->delt(); break;
+        case 5: _t->slt_s1_in(); break;
+        case 6: _t->slt_s2_in(); break;
+        case 7: _t->slt_s3_in(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -122,6 +126,12 @@ void dinosaur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             typedef void (dinosaur::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dinosaur::releasekey)) {
                 *result = 3;
+            }
+        }
+        {
+            typedef void (dinosaur::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dinosaur::delt)) {
+                *result = 4;
             }
         }
     }
@@ -153,13 +163,13 @@ int dinosaur::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }
@@ -186,5 +196,11 @@ void dinosaur::downkey()
 void dinosaur::releasekey()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, Q_NULLPTR);
+}
+
+// SIGNAL 4
+void dinosaur::delt()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

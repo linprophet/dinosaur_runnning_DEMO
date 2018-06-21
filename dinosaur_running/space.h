@@ -39,7 +39,7 @@ protected slots:
     //void slt_startGame();
     //void slt_pauseGame();
     void slt_updata();
-    //void slt_del();
+    void slt_del();
     //void slt_addscore(int);
     //void slt_menu();
 };

@@ -1,10 +1,12 @@
 #include "obstacle.h"
 #include <QGraphicsItem>
+#include <QGraphicsObject>
 #include<QGraphicsScene>
 #include <QPainter>
 #include <QPixmap>
 #include "global.h"
 #include <QPropertyAnimation>
+#include <QDebug>
 
 Obstacle::Obstacle(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGraphicsItem *parent)
 :QGraphicsObject(parent)
@@ -18,8 +20,8 @@ Obstacle::Obstacle(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGr
      anim_move->setEndValue(QPoint(O_Pos_X-1000,O_Pos_Y));
      anim_move->setEasingCurve(QEasingCurve::Linear);
      anim_move->start();
-
-
+     //可能有BUG
+    //connect(anim_move, SIGNAL(finished()), this,SLOT(slt_eimt_del()));
 
 
 }
@@ -44,3 +46,9 @@ QPainterPath Obstacle::shape()const
     path.addRect(boundingRect());
     return path;
 }
+/*
+void Obstacle::slt_eimt_del()
+{
+    emit delt();
+}
+*/

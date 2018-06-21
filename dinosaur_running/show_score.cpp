@@ -22,7 +22,7 @@ Show_score::Show_score(qreal w,qreal h,int* score,QGraphicsScene *scene,QGraphic
 
 void Show_score::advance(int step)
 {
-    qDebug()<<*s_score;
+    //qDebug()<<*s_score;
 }
 
 QRectF Show_score::boundingRect()const
