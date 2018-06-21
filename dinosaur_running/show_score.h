@@ -12,12 +12,10 @@
 class Show_score:public QGraphicsObject
 
 {
-    //Q_OBJECT
 public:
     Show_score(qreal w,qreal h,int* score,QGraphicsScene *scene,QGraphicsItem *parent = 0);
-    QRectF boundingRect() const;
-    QPainterPath shape() const ;
-    ~Show_score();
+    QRectF boundingRect()const;
+    QPainterPath shape()const ;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void process();
 protected:

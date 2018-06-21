@@ -47,7 +47,7 @@ Show_score::Show_score(qreal w,qreal h,int* score,QGraphicsScene *scene,QGraphic
 void Show_score::advance(int step)
 {
     //个位
-    //qDebug()<<*s_score;
+    qDebug()<<*s_score;
     /*
     bit=*s_score%10;
     num_address=int2string(bit);
@@ -90,9 +90,7 @@ void Show_score::advance(int step)
 
 QRectF Show_score::boundingRect()const
 {
-    QRectF sqaue(0,0,400,50);
-   qDebug()<<s_num_pic.rect();
-   return sqaue;
+ return s_num_pic.rect();
 }
 
 void Show_score::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -162,8 +160,3 @@ QString Show_score::int2string(int a)
     }
 }
 */
-
-Show_score::~Show_score()
-{
-    ;
-}

@@ -12,12 +12,13 @@ Obstacle::Obstacle(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGr
 :QGraphicsObject(parent)
 {
      O_Pix= pixs.scaled(Obs_W,Obs_H,Qt::KeepAspectRatioByExpanding);
+     k_step=0;
      scene->addItem(this);
      setPos(w,h);
      anim_move =new QPropertyAnimation(this,"pos");
      anim_move->setDuration(Dur_Time_obs);
      anim_move->setStartValue(QPoint(O_Pos_X,O_Pos_Y));
-     anim_move->setEndValue(QPoint(O_Pos_X-1000,O_Pos_Y));
+     anim_move->setEndValue(QPoint(O_Pos_X-1350,O_Pos_Y));
      anim_move->setEasingCurve(QEasingCurve::Linear);
      anim_move->start();
      //可能有BUG
@@ -27,6 +28,11 @@ Obstacle::Obstacle(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGr
 }
 void Obstacle::advance(int step)
 {
+    if (k_step==(Dur_Time_obs/30))
+          {
+               delete this;
+            }
+          k_step++;
 
 }
 

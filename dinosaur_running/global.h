@@ -36,7 +36,7 @@
 #define D_Pos_X 150.0
 #define D_Pos_Y 360.0
 //障碍物初始位置
-#define O_Pos_X 1000.0
+#define O_Pos_X 1300.0
 #define O_Pos_Y 360.0
 //计数器位置
 #define S_Pos_X 1100

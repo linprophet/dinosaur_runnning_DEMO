@@ -28,7 +28,9 @@ private:
     dinosaur *m_player;
     Obstacle *m_obstacle1;
     Obstacle *m_obstacle2;
-    int m_scores , m_step;
+    int m_scores , m_step,r_step;
+            qreal res;
+
     bool isRunning;
 signals:
     //void sig_menu();

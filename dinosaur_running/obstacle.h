@@ -23,6 +23,7 @@ public:
     QPainterPath shape()const ;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QPropertyAnimation *anim_move;
+    int k_step;
 protected:
     void advance(int step) ;
 //signals:
