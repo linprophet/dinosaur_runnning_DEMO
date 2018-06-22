@@ -43,10 +43,10 @@
 #define S_Pos_Y 50
 //速度
 #define m_speed 5
-#define Dino_Speed 5
+#define Dino_Speed 3
 //动画控制
 #define Dur_Time 300
-#define Dur_Time_obs 1000
+#define Dur_Time_obs 1200
 #define Up_Distance 180
 //数字大小
 #define Num_W 20

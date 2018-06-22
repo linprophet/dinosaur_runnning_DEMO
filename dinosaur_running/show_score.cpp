@@ -47,7 +47,7 @@ Show_score::Show_score(qreal w,qreal h,int* score,QGraphicsScene *scene,QGraphic
 void Show_score::advance(int step)
 {
     //个位
-    qDebug()<<*s_score;
+    qDebug()<<step;
     /*
     bit=*s_score%10;
     num_address=int2string(bit);
@@ -70,7 +70,8 @@ void Show_score::advance(int step)
     s_num_pic_bit[0]=QPixmap(num_address);
     */
     //个位
-
+    if(step==0)
+    {
     bit=*s_score%10;
     s_num_pic_bit[4]=num[bit];
     //十位
@@ -86,6 +87,7 @@ void Show_score::advance(int step)
     bit=*s_score/10000;
     s_num_pic_bit[0]=num[bit];
     update();
+    }
 }
 
 QRectF Show_score::boundingRect()const
