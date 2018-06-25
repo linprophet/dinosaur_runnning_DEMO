@@ -1,6 +1,7 @@
 #include "dinosaur.h"
 #include <QDebug>
 #include <global.h>
+#include <QPainter>
 #include <QPointF>
 #include <QList>
 
@@ -89,6 +90,8 @@ void dinosaur::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     Q_UNUSED(option);
     Q_UNUSED(widget);
     painter->drawPixmap(0, 0, m_pixs);//这个绘制又是在哪个系？？
+    painter->drawPixmap(200,-200,m_pixs2);
+    painter->drawPixmap(450,-100,m_pixs3);
 }
 
 
@@ -97,6 +100,11 @@ void dinosaur::fall()
     run=0;
     Group->stop();
     m_pixs=dino_dead;
+    QPixmap temp;
+    temp=QPixmap(":/new/gameover.png");
+    m_pixs2=temp.scaled(390*1.5,22*1.5);
+    temp=QPixmap(":/new/again.png");
+    m_pixs3=temp.scaled(72,64);
     update();
     emit dead();
 
@@ -178,6 +186,20 @@ void dinosaur::keyReleaseEvent(QKeyEvent *event)
             emit releasekey();
             break;
         }
+}
+
+void dinosaur::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    qDebug()<<"Mouse！";
+    event->accept();
+    if(run==0)
+    {
+        if(event->button() == Qt::LeftButton)
+        {
+
+            emit renew();
+        }
+    }
 }
 
 void dinosaur::posLost()

@@ -41,7 +41,7 @@
 #define D_Pos_Y 360.0
 //障碍物初始位置
 #define O_Pos_X 1300.0
-#define O_Pos_Y 360.0
+#define O_Pos_Y 365.0
 //计数器位置
 #define S_Pos_X 1100
 #define S_Pos_Y 50
@@ -49,8 +49,8 @@
 #define m_speed 5
 #define Dino_Speed 3
 //动画控制
-#define Dur_Time 300
-#define Dur_Time_obs 1200
+#define Dur_Time 500
+#define Dur_Time_obs 2500
 #define Up_Distance 180
 //数字大小
 #define Num_W 20

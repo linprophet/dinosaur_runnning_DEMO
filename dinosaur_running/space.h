@@ -12,6 +12,7 @@
 #include <QWidget>
 #include <QGraphicsItem>
 
+
 class Space : public QGraphicsView
 {
     Q_OBJECT
@@ -23,6 +24,7 @@ public:
 protected:
     //void mouseDoubleClickEvent(QMouseEvent *event);
 private:
+    int dur_time;
     QGraphicsScene *m_scene;
     QTimer *m_timer;
     dinosaur *m_player;
@@ -31,7 +33,7 @@ private:
     Randomizer a;
     int m_scores , m_step,r_step,m_max;
             qreal res,res1;
-
+    int run_flag;
     bool isRunning;
 signals:
     //void sig_menu();

@@ -15,6 +15,7 @@
 #include <QState>
 #include <QStateMachine>
 
+
 class dinosaur:public QGraphicsObject
 {
     Q_OBJECT
@@ -32,10 +33,11 @@ public:
     //virtual int name() const = 0;
     int state_flag;
     QSequentialAnimationGroup *Group;
-    QPixmap m_pixs,dino_left,dino_right,dino_left_down,dino_right_down,dino_jump,dino_dead;
+    QPixmap m_pixs,m_pixs2,m_pixs3,dino_left,dino_right,dino_left_down,dino_right_down,dino_jump,dino_dead;
 protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
 protected:
     QPropertyAnimation *anim_up,*anim_down;
     QStateMachine *Machine;

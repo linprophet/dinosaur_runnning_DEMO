@@ -49,31 +49,33 @@ void Space::init()
     m_scores=0;
     m_step=0;
     r_step=0;
+    run_flag=1;
     res=0;
     res1=0;
     QPixmap t;
+    dur_time=2600;
     t=QPixmap(Dino_Pic);
     m_player = new dinosaur(D_Pos_X,D_Pos_Y,t,m_scene);
     res1=a.creat(0,3);
     if(res1==0)
     {
     t=QPixmap(Obs_Pic);
-    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y+30,t,m_player,m_scene,dur_time,&run_flag);
     }
     if(res1==1)
     {
     t=QPixmap(Obs_Pic_1);
-    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_player,m_scene,dur_time,&run_flag);
     }
     if(res1==2)
     {
     t=QPixmap(Obs_Pic_2);
-    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_player,m_scene,dur_time,&run_flag);
     }
     if(res1==3)
     {
     t=QPixmap(Obs_Pic_3);
-    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_player,m_scene,dur_time,&run_flag);
     }
 
     s_num = new Show_score(S_Pos_X,S_Pos_Y,&m_scores,m_scene);
@@ -97,14 +99,13 @@ void Space::slt_playerDead()
 {
     m_timer->stop();
     isRunning = false;
+    run_flag = 0;
     m_obstacle1->anim_move->stop();
     s_num->process();
     if(m_max<m_scores)
     {
         m_max= m_scores;
     }
-    QPainter pen(this);
-    pen.drawPixmap(725,250,195,11,QPixmap(":/new/gameover.png"));
 
     //slt_newGame();
 }
@@ -112,6 +113,8 @@ void Space::slt_playerDead()
 void Space::slt_updata()
 {
     m_scene->advance();
+    dur_time=600+(1000000/(500+m_scores));
+    //qDebug()<<dur_time;
     m_step++;
     r_step++;
     if (r_step==1)
@@ -126,22 +129,22 @@ void Space::slt_updata()
         if(res1==0)
         {
         st=QPixmap(Obs_Pic);
-        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y+30,st,m_player,m_scene,dur_time,&run_flag);
         }
         if(res1==1)
         {
         st=QPixmap(Obs_Pic_1);
-        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_player,m_scene,dur_time,&run_flag);
         }
         if(res1==2)
         {
         st=QPixmap(Obs_Pic_2);
-        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_player,m_scene,dur_time,&run_flag);
         }
         if(res1==3)
         {
         st=QPixmap(Obs_Pic_3);
-        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_player,m_scene,dur_time,&run_flag);
         }
 
          //m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);

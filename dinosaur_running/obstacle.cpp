@@ -8,22 +8,24 @@
 #include <QPropertyAnimation>
 #include <QDebug>
 
-Obstacle::Obstacle(qreal w,qreal h,const QPixmap &pixs,QGraphicsScene *scene,QGraphicsItem *parent)
+Obstacle::Obstacle(qreal w, qreal h, const QPixmap &pixs, dinosaur *play, QGraphicsScene *scene, int During_time, int *flag_run, QGraphicsItem *parent)
 :QGraphicsObject(parent)
 {
+     the_flag=flag_run;
+     o_play=play;
      O_Pix= pixs.scaled(Obs_W,Obs_H,Qt::KeepAspectRatioByExpanding);
      k_step=0;
      scene->addItem(this);
      setPos(w,h);
      anim_move =new QPropertyAnimation(this,"pos");
-     anim_move->setDuration(Dur_Time_obs);
+     anim_move->setDuration(During_time);
      anim_move->setStartValue(QPoint(O_Pos_X,O_Pos_Y));
-     anim_move->setEndValue(QPoint(O_Pos_X-1350,O_Pos_Y));
+     anim_move->setEndValue(QPoint(O_Pos_X-1500,O_Pos_Y));
      anim_move->setEasingCurve(QEasingCurve::Linear);
      anim_move->start();
      //可能有BUG
     //connect(anim_move, SIGNAL(finished()), this,SLOT(slt_eimt_del()));
-
+    //connect(o_play,SIGNAL(dead()),this,SLOT(slt_eimt_del()));
 
 }
 void Obstacle::advance(int step)
@@ -33,8 +35,14 @@ void Obstacle::advance(int step)
                delete this;
             }
           k_step++;
+     if(*the_flag==0)
+     {
+         slt_eimt_del();
+     }
 
 }
+
+
 
 QRectF Obstacle::boundingRect()const
 {
@@ -52,9 +60,10 @@ QPainterPath Obstacle::shape()const
     path.addRect(boundingRect());
     return path;
 }
-/*
+
 void Obstacle::slt_eimt_del()
 {
-    emit delt();
+   // qDebug()<<"OK!!!";
+    anim_move->stop();
 }
-*/
+
