@@ -72,13 +72,15 @@ dinosaur::~dinosaur()
 
 QRectF dinosaur::boundingRect() const
 {
+    //qDebug()<<m_pixs.rect();
     return m_pixs.rect();
 }
 
 QPainterPath dinosaur::shape()const
 {
     QPainterPath path;
-    path.addRect(boundingRect());
+    path.addRect(QRect(3,24,80,80));
+   // path.addRect(QRect(19,2,80,23));
     return path;
 }
 
@@ -106,7 +108,7 @@ void dinosaur::doCollide()
     if(collisions.size()!=0)
     {
         fall();
-        qDebug()<<"Daed Event!";
+        //qDebug()<<"Daed Event!";
     }
 }
 

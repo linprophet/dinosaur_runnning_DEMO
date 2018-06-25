@@ -18,7 +18,7 @@ class Space : public QGraphicsView
 public:
     Space(QWidget *parent = 0);
     void init();
-    Show_score *s_num;
+    Show_score *s_num,*s_num_1;
     //void enemys();
 protected:
     //void mouseDoubleClickEvent(QMouseEvent *event);
@@ -28,8 +28,9 @@ private:
     dinosaur *m_player;
     Obstacle *m_obstacle1;
     Obstacle *m_obstacle2;
-    int m_scores , m_step,r_step;
-            qreal res;
+    Randomizer a;
+    int m_scores , m_step,r_step,m_max;
+            qreal res,res1;
 
     bool isRunning;
 signals:

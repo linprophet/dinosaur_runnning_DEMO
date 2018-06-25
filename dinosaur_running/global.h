@@ -21,6 +21,10 @@
 #define Dino_Pic_Dead ":/new/dinosaur_dead.png"
 #define Dino_Pic_Null ":/new/dinosaur_null.png"
 #define Obs_Pic ":/new/obstacle.png"
+#define Obs_Pic_1 ":/new/obstacle_1.png"
+#define Obs_Pic_2 ":/new/obstacle_2.png"
+#define Obs_Pic_3 ":/new/obstacle.png"
+
 //数字图片
 #define Num_0_Pic ":/new/num_0.png"
 #define Num_1_Pic ":/new/num_1.png"

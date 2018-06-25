@@ -2,13 +2,14 @@
 #include "global.h"
 #include <QGraphicsScene>
 #include <QDebug>
+#include <QPainter>
 
 Show_score::Show_score(qreal w,qreal h,int* score,QGraphicsScene *scene,QGraphicsItem *parent)
     :QGraphicsObject(parent)
 {
     s_score = score;
     QPixmap temp;
-    temp = QPixmap(Num_3_Pic);
+    temp = QPixmap(Num_0_Pic);
     s_num_pic = temp;
 
     s_num_pic_bit[0]=temp;
@@ -47,7 +48,7 @@ Show_score::Show_score(qreal w,qreal h,int* score,QGraphicsScene *scene,QGraphic
 void Show_score::advance(int step)
 {
     //个位
-    qDebug()<<step;
+    //qDebug()<<step;
     /*
     bit=*s_score%10;
     num_address=int2string(bit);
@@ -92,7 +93,7 @@ void Show_score::advance(int step)
 
 QRectF Show_score::boundingRect()const
 {
-  QRectF sqaue(0,0,500,50);
+  QRectF sqaue(0,0,120,50);
  return sqaue;
 }
 
@@ -116,7 +117,7 @@ QPainterPath Show_score::shape()const
 
 void Show_score::process()
 {
-    ;
+
 }
 /*
 QString Show_score::int2string(int a)

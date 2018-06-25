@@ -43,7 +43,7 @@ QRectF Obstacle::boundingRect()const
 
 void Obstacle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-   painter->drawPixmap(0,0,Obs_W,Obs_H,O_Pix);
+   painter->drawPixmap(0,0,O_Pix.width(),O_Pix.height(),O_Pix);
 }
 
 QPainterPath Obstacle::shape()const

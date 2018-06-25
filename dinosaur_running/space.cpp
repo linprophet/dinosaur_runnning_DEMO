@@ -9,6 +9,7 @@
 
 Space::Space(QWidget *parent) : QGraphicsView(parent), isRunning(false) {
 
+     m_max=0;
     //初始化场景
     m_scene = new QGraphicsScene;
     m_scene->setSceneRect(0,0,SCENEWIDTH,SCENEHEIGHT);
@@ -46,15 +47,37 @@ void Space::init()
 {
     //qDebug()<<"YES!";
     m_scores=0;
-        m_step=0;
-        r_step=0;
-        res=0;
-        QPixmap t;
+    m_step=0;
+    r_step=0;
+    res=0;
+    res1=0;
+    QPixmap t;
     t=QPixmap(Dino_Pic);
     m_player = new dinosaur(D_Pos_X,D_Pos_Y,t,m_scene);
+    res1=a.creat(0,3);
+    if(res1==0)
+    {
     t=QPixmap(Obs_Pic);
     m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    }
+    if(res1==1)
+    {
+    t=QPixmap(Obs_Pic_1);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    }
+    if(res1==2)
+    {
+    t=QPixmap(Obs_Pic_2);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    }
+    if(res1==3)
+    {
+    t=QPixmap(Obs_Pic_3);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
+    }
+
     s_num = new Show_score(S_Pos_X,S_Pos_Y,&m_scores,m_scene);
+    s_num_1 =new Show_score(50,S_Pos_Y,&m_max,m_scene);
     m_player->setFocus();
     connect(m_player,SIGNAL(dead()),this,SLOT(slt_playerDead()));
     connect(m_player,SIGNAL(renew()),this,SLOT(slt_newGame()));
@@ -76,6 +99,13 @@ void Space::slt_playerDead()
     isRunning = false;
     m_obstacle1->anim_move->stop();
     s_num->process();
+    if(m_max<m_scores)
+    {
+        m_max= m_scores;
+    }
+    QPainter pen(this);
+    pen.drawPixmap(725,250,195,11,QPixmap(":/new/gameover.png"));
+
     //slt_newGame();
 }
 
@@ -84,21 +114,42 @@ void Space::slt_updata()
     m_scene->advance();
     m_step++;
     r_step++;
-    Randomizer a;
     if (r_step==1)
     {
-        res=a.creat(16,30);
+        res=a.creat(16,50);
     }
     if(r_step==res)
     {
         QPixmap st;
+        qDebug()<<a.creat(0,3);
+        res1=a.creat(0,3);
+        if(res1==0)
+        {
         st=QPixmap(Obs_Pic);
-         m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        }
+        if(res1==1)
+        {
+        st=QPixmap(Obs_Pic_1);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        }
+        if(res1==2)
+        {
+        st=QPixmap(Obs_Pic_2);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        }
+        if(res1==3)
+        {
+        st=QPixmap(Obs_Pic_3);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_scene);
+        }
+
+         //m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);
          r_step=0;
 
     }
-    qDebug()<<m_step;
-    qDebug()<<r_step;
+   // qDebug()<<m_step;
+   // qDebug()<<r_step;
     if (m_step % 2 == 0 )
     {
 

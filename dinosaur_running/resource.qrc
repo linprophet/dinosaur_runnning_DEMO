@@ -20,5 +20,9 @@
         <file>num_7.png</file>
         <file>num_8.png</file>
         <file>num_9.png</file>
+        <file>again.png</file>
+        <file>gameover.png</file>
+        <file>obstacle_1.png</file>
+        <file>obstacle_2.png</file>
     </qresource>
 </RCC>
