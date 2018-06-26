@@ -26,6 +26,7 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QPropertyAnimation *anim_move;
     int k_step;
+    int k_flag;
 protected:
     void advance(int step) ;
 //signals:

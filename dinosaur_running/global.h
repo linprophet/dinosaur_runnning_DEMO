@@ -23,7 +23,7 @@
 #define Obs_Pic ":/new/obstacle.png"
 #define Obs_Pic_1 ":/new/obstacle_1.png"
 #define Obs_Pic_2 ":/new/obstacle_2.png"
-#define Obs_Pic_3 ":/new/obstacle.png"
+#define Obs_Pic_3 ":/new/obstacle_3.png"
 
 //数字图片
 #define Num_0_Pic ":/new/num_0.png"

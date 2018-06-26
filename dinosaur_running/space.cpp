@@ -56,11 +56,11 @@ void Space::init()
     dur_time=2600;
     t=QPixmap(Dino_Pic);
     m_player = new dinosaur(D_Pos_X,D_Pos_Y,t,m_scene);
-    res1=a.creat(0,3);
+    res1=a.creat(0,4);
     if(res1==0)
     {
     t=QPixmap(Obs_Pic);
-    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y+30,t,m_player,m_scene,dur_time,&run_flag);
+    m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_player,m_scene,dur_time,&run_flag);
     }
     if(res1==1)
     {
@@ -75,7 +75,9 @@ void Space::init()
     if(res1==3)
     {
     t=QPixmap(Obs_Pic_3);
+    run_flag=3;
     m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_player,m_scene,dur_time,&run_flag);
+    run_flag=1;
     }
 
     s_num = new Show_score(S_Pos_X,S_Pos_Y,&m_scores,m_scene);
@@ -124,12 +126,11 @@ void Space::slt_updata()
     if(r_step==res)
     {
         QPixmap st;
-        qDebug()<<a.creat(0,3);
-        res1=a.creat(0,3);
+        res1=a.creat(0,4);
         if(res1==0)
         {
         st=QPixmap(Obs_Pic);
-        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y+30,st,m_player,m_scene,dur_time,&run_flag);
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_player,m_scene,dur_time,&run_flag);
         }
         if(res1==1)
         {
@@ -144,7 +145,9 @@ void Space::slt_updata()
         if(res1==3)
         {
         st=QPixmap(Obs_Pic_3);
-        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,st,m_player,m_scene,dur_time,&run_flag);
+        run_flag=3;
+        m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y-80,st,m_player,m_scene,dur_time,&run_flag);
+        run_flag=1;
         }
 
          //m_obstacle1= new Obstacle(O_Pos_X,O_Pos_Y,t,m_scene);

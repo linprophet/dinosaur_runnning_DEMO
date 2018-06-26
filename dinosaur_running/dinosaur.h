@@ -37,7 +37,7 @@ public:
 protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    //void mousePressEvent(QGraphicsSceneMouseEvent *event);
 protected:
     QPropertyAnimation *anim_up,*anim_down;
     QStateMachine *Machine;

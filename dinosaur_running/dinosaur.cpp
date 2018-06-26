@@ -187,7 +187,7 @@ void dinosaur::keyReleaseEvent(QKeyEvent *event)
             break;
         }
 }
-
+/*
 void dinosaur::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     qDebug()<<"Mouse！";
@@ -201,7 +201,7 @@ void dinosaur::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
     }
 }
-
+*/
 void dinosaur::posLost()
 {
     QPointF pos = scenePos();

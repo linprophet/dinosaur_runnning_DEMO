@@ -11,6 +11,13 @@
 Obstacle::Obstacle(qreal w, qreal h, const QPixmap &pixs, dinosaur *play, QGraphicsScene *scene, int During_time, int *flag_run, QGraphicsItem *parent)
 :QGraphicsObject(parent)
 {
+     k_flag=0;
+     if(*flag_run==3)
+     {
+         *flag_run==1;
+         k_flag=1;
+         qDebug()<<"bird!!";
+     }
      the_flag=flag_run;
      o_play=play;
      O_Pix= pixs.scaled(Obs_W,Obs_H,Qt::KeepAspectRatioByExpanding);
@@ -19,8 +26,8 @@ Obstacle::Obstacle(qreal w, qreal h, const QPixmap &pixs, dinosaur *play, QGraph
      setPos(w,h);
      anim_move =new QPropertyAnimation(this,"pos");
      anim_move->setDuration(During_time);
-     anim_move->setStartValue(QPoint(O_Pos_X,O_Pos_Y));
-     anim_move->setEndValue(QPoint(O_Pos_X-1500,O_Pos_Y));
+     anim_move->setStartValue(QPoint(w,h));
+     anim_move->setEndValue(QPoint(w-1500,h));
      anim_move->setEasingCurve(QEasingCurve::Linear);
      anim_move->start();
      //可能有BUG
@@ -35,6 +42,17 @@ void Obstacle::advance(int step)
                delete this;
             }
           k_step++;
+     if(k_flag==1&&k_step%10==0)
+     {
+         O_Pix=QPixmap(":/new/obstacle_3.png").scaled(Obs_W,Obs_H,Qt::KeepAspectRatioByExpanding);
+         update();
+     }
+     if(k_flag==1&&k_step%10==5)
+     {
+         O_Pix=QPixmap(":/new/obstacle_4.png").scaled(Obs_W,Obs_H,Qt::KeepAspectRatioByExpanding);
+         update();
+     }
+
      if(*the_flag==0)
      {
          slt_eimt_del();
