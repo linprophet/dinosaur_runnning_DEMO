@@ -16,7 +16,7 @@ Obstacle::Obstacle(qreal w, qreal h, const QPixmap &pixs, dinosaur *play, QGraph
      {
          *flag_run==1;
          k_flag=1;
-         qDebug()<<"bird!!";
+         //qDebug()<<"bird!!";
      }
      the_flag=flag_run;
      o_play=play;

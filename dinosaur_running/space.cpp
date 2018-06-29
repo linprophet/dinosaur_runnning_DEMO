@@ -115,13 +115,13 @@ void Space::slt_playerDead()
 void Space::slt_updata()
 {
     m_scene->advance();
-    dur_time=600+(1000000/(500+m_scores));
+    dur_time=600+(400000/(200+m_scores));
     //qDebug()<<dur_time;
     m_step++;
     r_step++;
     if (r_step==1)
     {
-        res=a.creat(16,50);
+        res=a.creat(14,50);
     }
     if(r_step==res)
     {

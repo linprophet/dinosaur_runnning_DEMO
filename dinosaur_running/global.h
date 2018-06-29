@@ -49,7 +49,7 @@
 #define m_speed 5
 #define Dino_Speed 3
 //动画控制
-#define Dur_Time 500
+#define Dur_Time 420
 #define Dur_Time_obs 2500
 #define Up_Distance 180
 //数字大小
